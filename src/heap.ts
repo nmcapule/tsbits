@@ -29,6 +29,14 @@ export class Heap<T> {
     this.resolve(this.storage.length - 1);
   }
 
+  /** Returns the next value that can be popped. */
+  top(): T | null {
+    if (this.storage.length === 0) {
+      return null;
+    }
+    return this.storage[0];
+  }
+
   /** Removes and returns the smallest value from the heap. */
   pop(): T | null {
     // Early exit if heap is empty!

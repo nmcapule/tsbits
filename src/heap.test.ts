@@ -27,6 +27,9 @@ test("behaves like a heap", () => {
 
   expect(heap.size).toBe(2);
 
+  expect(heap.top()).toBe(7);
+  expect(heap.size).toBe(2);
+
   expect(heap.pop()).toBe(7);
   expect(heap.pop()).toBe(8);
 });
