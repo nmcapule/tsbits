@@ -41,3 +41,18 @@ test("can specify comparer to adjust pop order", () => {
   }
   expect(heap.size).toBe(0);
 });
+
+test("can handle strings", () => {
+  const input = ["oh", "hello", "world", "!"];
+  const expected = ["!", "hello", "oh", "world"];
+
+  const heap = new Heap();
+  for (const x of input) {
+    heap.insert(x);
+  }
+
+  for (const x of expected) {
+    expect(heap.pop()).toBe(x);
+  }
+  expect(heap.size).toBe(0);
+});
