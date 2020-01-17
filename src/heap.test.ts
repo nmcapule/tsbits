@@ -12,6 +12,25 @@ test("can insert and pop", () => {
   expect(heap.size).toBe(0);
 });
 
+test("behaves like a heap", () => {
+  const heap = new Heap();
+
+  heap.insert(5);
+  heap.insert(7);
+  heap.insert(3);
+
+  expect(heap.pop()).toBe(3);
+
+  heap.insert(8);
+
+  expect(heap.pop()).toBe(5);
+
+  expect(heap.size).toBe(2);
+
+  expect(heap.pop()).toBe(7);
+  expect(heap.pop()).toBe(8);
+});
+
 test("can sort all its input by pop order", () => {
   const input = [3, 1, 2, 65, 3, 2, 5, 8, -1, 0];
   const expected = [-1, 0, 1, 2, 2, 3, 3, 5, 8, 65];
